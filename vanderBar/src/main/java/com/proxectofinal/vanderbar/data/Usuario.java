@@ -1,14 +1,17 @@
-package data;
+package com.proxectofinal.vanderbar.data;
 
 import lombok.Data;
-import lombok.Generated;
 
 import javax.persistence.*;
+import java.io.Serial;
+import java.io.Serializable;
 
 @Data
 @Entity
 @Table(name = "usuario")
-public class Usuario {
+public class Usuario implements Serializable {
+    @Serial
+    private static final long serialVersionUID = 4858200763503532996L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "idUsuario", nullable = false)
@@ -46,5 +49,4 @@ public class Usuario {
 
     @Column(name = "contrasinal", nullable = false)
     private String contrasinal;
-
 }
