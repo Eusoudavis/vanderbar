@@ -9,6 +9,9 @@ import java.io.Serializable;
 @Data
 @Entity
 @Table(name = "usuario")
+@Inheritance(
+        strategy = InheritanceType.JOINED
+)
 public class Usuario implements Serializable {
     @Serial
     private static final long serialVersionUID = 4858200763503532996L;
@@ -45,7 +48,7 @@ public class Usuario implements Serializable {
     private String rol;
 
     @Column(name = "nome_concello", nullable = false)
-    private String nome_concello;
+    private Concello concello;
 
     @Column(name = "contrasinal", nullable = false)
     private String contrasinal;
