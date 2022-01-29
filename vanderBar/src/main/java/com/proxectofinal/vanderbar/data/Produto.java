@@ -10,6 +10,9 @@ import java.util.List;
 @Data
 @Entity
 @Table(name = "produto")
+@Inheritance(
+        strategy = InheritanceType.JOINED
+)
 public class Produto implements Serializable {
 
     @Serial
@@ -21,5 +24,6 @@ public class Produto implements Serializable {
 
     @Column(name = "nome_produto")
     private String nome_produto;
+
 
 }

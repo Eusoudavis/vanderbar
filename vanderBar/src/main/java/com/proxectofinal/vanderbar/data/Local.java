@@ -16,7 +16,7 @@ public class Local implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id_local", nullable = false)
-    private int idlocal;
+    private int id_local;
 
     @Column(name = "nome_local", nullable = false)
     private String nomeLocal;
@@ -50,7 +50,49 @@ public class Local implements Serializable {
     )
     private List<Horario> horarios;
 
+    @ManyToMany(cascade = {
+            CascadeType.PERSIST,
+            CascadeType.MERGE
+    })
+    @JoinTable(
+            name = "local_tipo_local",
+            joinColumns = {@JoinColumn(name = "id_local")},
+            inverseJoinColumns = {@JoinColumn(name = "id_tipo_local")}
+    )
+    private List<TipoLocal> tiposLocais;
 
+    @ManyToMany(cascade = {
+            CascadeType.PERSIST,
+            CascadeType.MERGE
+    })
+    @JoinTable(
+            name = "local_propietario",
+            joinColumns = {@JoinColumn(name = "id_local")},
+            inverseJoinColumns = {@JoinColumn(name = "id_usuario")}
+    )
+    private List<Propietario> propietarios;
+
+    @ManyToMany(cascade = {
+            CascadeType.PERSIST,
+            CascadeType.MERGE
+    })
+    @JoinTable(
+            name = "local_cliente",
+            joinColumns = {@JoinColumn(name = "id_local")},
+            inverseJoinColumns = {@JoinColumn(name = "id_usuario")}
+    )
+    private List<Cliente> clientes;
+
+    @ManyToMany(cascade = {
+            CascadeType.PERSIST,
+            CascadeType.MERGE
+    })
+    @JoinTable(
+            name = "local_carta",
+            joinColumns = {@JoinColumn(name = "id_local")},
+            inverseJoinColumns = {@JoinColumn(name = "id_carta")}
+    )
+    private List<Carta> cartas;
 
    // @Column(name = "estado", nullable = false)
    // private Estado estado;

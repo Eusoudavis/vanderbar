@@ -17,11 +17,11 @@ public class Usuario implements Serializable {
     private static final long serialVersionUID = 4858200763503532996L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "idUsuario", nullable = false)
-    private Long idUsuario;
+    @Column(name = "id_usuario", nullable = false)
+    private Long id_usuario;
 
-    @Column(name = "nome", nullable = false)
-    private String nome;
+    @Column(name = "nome_usuario", nullable = false)
+    private String nome_usuario;
 
     @Column(name = "apelido1", nullable = false)
     private String apelido1;
