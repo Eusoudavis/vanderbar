@@ -1,4 +1,4 @@
-package com.proxectofinal.vanderbar.data;
+package com.proxectofinal.vanderbar.data.dao;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

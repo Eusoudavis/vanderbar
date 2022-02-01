@@ -1,4 +1,4 @@
-package com.proxectofinal.vanderbar.data;
+package com.proxectofinal.vanderbar.data.dao;
 
 import lombok.Data;
 
@@ -16,7 +16,7 @@ public class Carta implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id_arta", nullable = false)
+    @Column(name = "id_carta", nullable = false)
     private int id_carta;
 
     @Column(name = "nome_carta", nullable = false)
@@ -38,4 +38,7 @@ public class Carta implements Serializable {
 
     @ManyToMany(mappedBy = "cartas")
     private List<Local> locais;
+
+    @OneToMany(mappedBy = "carta", cascade = CascadeType.ALL)
+    private List<ProdutoCarta> produtosCarta;
 }

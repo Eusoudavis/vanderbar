@@ -1,4 +1,4 @@
-package com.proxectofinal.vanderbar.data;
+package com.proxectofinal.vanderbar.data.dao;
 
 import lombok.Data;
 
@@ -10,12 +10,11 @@ import java.util.List;
 
 @Data
 @Entity
-@Table(name = "cliente")
-public class Cliente extends Usuario{
-
+@Table(name = "propietario")
+public class Propietario extends Usuario {
     @Serial
-    private static final long serialVersionUID = -1510141334132661341L;
+    private static final long serialVersionUID = 2204083726707698356L;
 
-    @ManyToMany(mappedBy = "clientes")
+    @ManyToMany(mappedBy = "propietarios")
     private List<Local> locais;
 }

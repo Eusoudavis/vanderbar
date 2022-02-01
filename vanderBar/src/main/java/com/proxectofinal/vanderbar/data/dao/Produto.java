@@ -1,4 +1,4 @@
-package com.proxectofinal.vanderbar.data;
+package com.proxectofinal.vanderbar.data.dao;
 
 import lombok.Data;
 
@@ -25,5 +25,6 @@ public class Produto implements Serializable {
     @Column(name = "nome_produto")
     private String nome_produto;
 
-
+    @OneToMany(mappedBy = "produto", cascade = CascadeType.ALL)
+    private List<ProdutoCarta> produtosCarta;
 }
