@@ -1,4 +1,4 @@
-package com.proxectofinal.vanderbar.data.dao;
+package com.proxectofinal.vanderbar.data.entity;
 
 import lombok.Data;
 
@@ -19,14 +19,17 @@ public class Concello implements Serializable {
     private Long id_concello;
 
     @Column(name = "nome_concello")
-    private Long nome_concello;
+    private String nome_concello;
+
+    @Column(name = "postal_code")
+    private Integer postal_code;
 
     @OneToMany
     @JoinColumn(name = "id_concello")
-    List<Local> locales;
+    private List<Local> locales;
 
     @OneToMany
     @JoinColumn(name = "id_concello")
-    List<Usuario> usuarios;
+    private List<Usuario> usuarios;
 
 }

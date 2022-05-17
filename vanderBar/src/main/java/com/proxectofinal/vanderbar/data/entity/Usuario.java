@@ -1,4 +1,4 @@
-package com.proxectofinal.vanderbar.data.dao;
+package com.proxectofinal.vanderbar.data.entity;
 
 import lombok.Data;
 
@@ -33,10 +33,10 @@ public class Usuario implements Serializable {
     private String rua;
 
     @Column(name = "numero", nullable = false)
-    private int numero;
+    private Integer numero;
 
     @Column(name = "telefono", nullable = false)
-    private int telefono;
+    private Integer telefono;
 
     @Column(name = "email", nullable = false)
     private String email;

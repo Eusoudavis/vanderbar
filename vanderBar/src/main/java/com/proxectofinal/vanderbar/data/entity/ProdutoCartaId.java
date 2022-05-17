@@ -1,4 +1,4 @@
-package com.proxectofinal.vanderbar.data.dao;
+package com.proxectofinal.vanderbar.data.entity;
 
 import lombok.Getter;
 

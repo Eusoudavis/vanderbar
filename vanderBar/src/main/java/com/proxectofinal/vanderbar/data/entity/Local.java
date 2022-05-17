@@ -1,4 +1,4 @@
-package com.proxectofinal.vanderbar.data.dao;
+package com.proxectofinal.vanderbar.data.entity;
 
 import lombok.Data;
 
@@ -24,8 +24,8 @@ public class Local implements Serializable {
     @Column(name = "rango_prezos", nullable = false)
     private double rangoPrezos;
 
-    @Column(name = "concello", nullable = false)
-    private Concello concello;
+//    @Column(name = "concello", nullable = false)
+//    private Concello concello;
 
     @Column(name = "rua", nullable = false)
     private String rua;
@@ -39,16 +39,16 @@ public class Local implements Serializable {
     @Column(name = "email", nullable = false)
     private String email;
 
-    @ManyToMany(cascade = {
-            CascadeType.PERSIST,
-            CascadeType.MERGE
-    })
-    @JoinTable(
-            name = "local_horario",
-            joinColumns = {@JoinColumn(name = "id_local")},
-            inverseJoinColumns = {@JoinColumn(name = "id_horario")}
-    )
-    private List<Horario> horarios;
+//    @ManyToMany(cascade = {
+//            CascadeType.PERSIST,
+//            CascadeType.MERGE
+//    })
+//    @JoinTable(
+//            name = "local_horario",
+//            joinColumns = {@JoinColumn(name = "id_local")},
+//            inverseJoinColumns = {@JoinColumn(name = "id_horario")}
+//    )
+//    private List<Horario> horarios;
 
     @ManyToMany(cascade = {
             CascadeType.PERSIST,
@@ -72,16 +72,16 @@ public class Local implements Serializable {
     )
     private List<Propietario> propietarios;
 
-    @ManyToMany(cascade = {
-            CascadeType.PERSIST,
-            CascadeType.MERGE
-    })
-    @JoinTable(
-            name = "local_cliente",
-            joinColumns = {@JoinColumn(name = "id_local")},
-            inverseJoinColumns = {@JoinColumn(name = "id_usuario")}
-    )
-    private List<Cliente> clientes;
+//    @ManyToMany(cascade = {
+//            CascadeType.PERSIST,
+//            CascadeType.MERGE
+//    })
+//    @JoinTable(
+//            name = "local_cliente",
+//            joinColumns = {@JoinColumn(name = "id_local")},
+//            inverseJoinColumns = {@JoinColumn(name = "id_usuario")}
+//    )
+//    private List<Cliente> clientes;
 
     @ManyToMany(cascade = {
             CascadeType.PERSIST,

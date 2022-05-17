@@ -1,4 +1,4 @@
-package com.proxectofinal.vanderbar.data.dao;
+package com.proxectofinal.vanderbar.data.entity;
 
 import lombok.Data;
 
@@ -16,6 +16,6 @@ public class Cliente extends Usuario{
     @Serial
     private static final long serialVersionUID = -1510141334132661341L;
 
-    @ManyToMany(mappedBy = "clientes")
-    private List<Local> locais;
+//    @ManyToMany(mappedBy = "clientes")
+//    private List<Local> locais;
 }
