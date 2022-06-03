@@ -1,11 +1,11 @@
 package com.proxectofinal.vanderbar.data.service.api;
 
-import com.proxectofinal.vanderbar.data.entity.Usuario;
+import com.proxectofinal.vanderbar.data.entity.User;
 
 import java.util.List;
 
 public interface UserService {
-    List<Usuario> findAll();
+    List<User> findAll();
 
-    void save(Usuario usuario);
+    void save(User user);
 }

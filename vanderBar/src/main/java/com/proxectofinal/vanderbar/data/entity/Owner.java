@@ -10,11 +10,11 @@ import java.util.List;
 
 @Data
 @Entity
-@Table(name = "propietario")
-public class Propietario extends Usuario {
+@Table(name = "owner")
+public class Owner extends User {
     @Serial
     private static final long serialVersionUID = 2204083726707698356L;
 
-    @ManyToMany(mappedBy = "propietarios")
+    @ManyToMany(mappedBy = "owners")
     private List<Local> locais;
 }

@@ -1,6 +1,6 @@
 package com.proxectofinal.vanderbar.data.service.impl;
 
-import com.proxectofinal.vanderbar.data.entity.Usuario;
+import com.proxectofinal.vanderbar.data.entity.User;
 import com.proxectofinal.vanderbar.data.repository.UserRepository;
 import com.proxectofinal.vanderbar.data.service.api.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,13 +13,13 @@ public class UserImpl implements UserService {
     private UserRepository userRepository;
 
     @Override
-    public List<Usuario> findAll() {
+    public List<User> findAll() {
         return null;
     }
 
     @Override
     @Transactional
-    public void save(Usuario usuario) {
-        userRepository.save(usuario);
+    public void save(User user) {
+        userRepository.save(user);
     }
 }

@@ -9,8 +9,8 @@ import java.util.List;
 
 @Data
 @Entity
-@Table(name = "prato")
-public class Prato extends Produto implements Serializable {
+@Table(name = "dish")
+public class Dish extends Product implements Serializable {
     @Serial
     private static final long serialVersionUID = -5065757635223878034L;
 
@@ -19,9 +19,9 @@ public class Prato extends Produto implements Serializable {
             CascadeType.MERGE
     })
     @JoinTable(
-            name = "prato_ingrediente",
-            joinColumns = {@JoinColumn(name = "id_produto")},
-            inverseJoinColumns = {@JoinColumn(name = "id_ingrediente")}
+            name = "dish_ingredient",
+            joinColumns = {@JoinColumn(name = "id_produt")},
+            inverseJoinColumns = {@JoinColumn(name = "id_ingredient")}
     )
-    private List<Ingrediente> ingredientes;
+    private List<Ingredient> ingredients;
 }

@@ -9,19 +9,19 @@ import java.util.List;
 
 @Data
 @Entity
-@Table(name = "Tipo_Bebida")
-public class TipoBebida implements Serializable {
+@Table(name = "drink_type")
+public class DrinkType implements Serializable {
     @Serial
     private static final long serialVersionUID = -7949422944951068891L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column
-    private Long id_tipo_bebida;
+    private Long id_drink_type;
 
-    @Column(name = "nome_tipo_bebida", nullable = false)
-    private int nome_tipo_bebida;
+    @Column(name = "name_drink_type", nullable = false)
+    private int name_drink_type;
 
-    @ManyToMany(mappedBy = "tiposBebida")
-    private List<Bebida> bebidas;
+    @ManyToMany(mappedBy = "drinkTypes")
+    private List<Drink> drinks;
 }

@@ -16,9 +16,9 @@ public class VanderbarApplication {
 		ConfigurableApplicationContext context =
 				SpringApplication.run(VanderbarApplication.class, args);
 
-		LocalService localService = context.getBean(LocalService.class);
-
-		localService.findAll().forEach((Local local) -> log.info(local.getNomeLocal()));
+//		LocalService localService = context.getBean(LocalService.class);
+//
+//		localService.findAll().forEach((Local local) -> log.info(local.getNomeLocal()));
 
 //		Local local = new Local();
 //		local.setNomeLocal("Furancho");

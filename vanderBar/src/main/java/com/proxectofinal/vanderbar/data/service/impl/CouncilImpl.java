@@ -1,7 +1,6 @@
 package com.proxectofinal.vanderbar.data.service.impl;
 
-import com.proxectofinal.vanderbar.data.entity.Concello;
-import com.proxectofinal.vanderbar.data.entity.Local;
+import com.proxectofinal.vanderbar.data.entity.Council;
 import com.proxectofinal.vanderbar.data.repository.CouncilRepository;
 import com.proxectofinal.vanderbar.data.service.api.CouncilService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,13 +14,13 @@ public class CouncilImpl implements CouncilService {
     private CouncilRepository councilRepository;
 
     @Override
-    public List<Concello> findAll() {
+    public List<Council> findAll() {
         return  councilRepository.findAll();
     }
 
     @Override
     @Transactional
-    public void save(Concello concello){
-        councilRepository.save(concello);
+    public void save(Council council){
+        councilRepository.save(council);
     }
 }

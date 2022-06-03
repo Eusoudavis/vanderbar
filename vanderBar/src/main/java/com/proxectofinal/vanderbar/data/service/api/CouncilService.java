@@ -1,11 +1,11 @@
 package com.proxectofinal.vanderbar.data.service.api;
 
-import com.proxectofinal.vanderbar.data.entity.Concello;
+import com.proxectofinal.vanderbar.data.entity.Council;
 
 import java.util.List;
 
 public interface CouncilService {
-    List<Concello> findAll();
+    List<Council> findAll();
 
-    void save(Concello concello);
+    void save(Council council);
 }

@@ -9,22 +9,22 @@ import java.util.List;
 
 @Data
 @Entity
-@Table(name = "produto")
+@Table(name = "product")
 @Inheritance(
         strategy = InheritanceType.JOINED
 )
-public class Produto implements Serializable {
+public class Product implements Serializable {
 
     @Serial
     private static final long serialVersionUID = -5518373776624493076L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id_produto")
-    private Long id_produto;
+    @Column(name = "id_product")
+    private Long id_product;
 
-    @Column(name = "nome_produto")
-    private String nome_produto;
+    @Column(name = "name_product")
+    private String name_product;
 
-    @OneToMany(mappedBy = "produto", cascade = CascadeType.ALL)
-    private List<ProdutoCarta> produtosCarta;
+    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
+    private List<ProductDish> productDishes;
 }

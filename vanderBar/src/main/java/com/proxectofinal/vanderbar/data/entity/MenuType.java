@@ -9,20 +9,20 @@ import java.util.List;
 
 @Data
 @Entity
-@Table(name = "tipo_carta")
-public class TipoCarta implements Serializable {
+@Table(name = "menu_type")
+public class MenuType implements Serializable {
     @Serial
     private static final long serialVersionUID = -8195680671717122010L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id_tipo_carta", nullable = false)
-    private int id_tipo_carta;
+    @Column(name = "id_menu_type", nullable = false)
+    private int id_menu_type;
 
-    @Column(name = "nome_tipo_carta", nullable = false)
-    private String nome_tipo_carta;
+    @Column(name = "name_menu_type", nullable = false)
+    private String name_menu_type;
 
-    @ManyToMany(mappedBy = "tiposCarta")
-    private List<Carta> cartas;
+    @ManyToMany(mappedBy = "menuTypes")
+    private List<Menu> menus;
 
 }

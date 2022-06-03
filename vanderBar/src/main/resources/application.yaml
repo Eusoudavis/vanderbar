@@ -1,8 +1,8 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    username: root
-    password:
+    username: mtec
+    password: 9LxQmTg8YPu84SSQ_
     url: jdbc:mysql://localhost:3306/vanderbar
   jpa:
     show-sql: true

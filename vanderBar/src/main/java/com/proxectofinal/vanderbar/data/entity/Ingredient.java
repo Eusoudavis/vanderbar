@@ -9,8 +9,8 @@ import java.util.List;
 
 @Data
 @Entity
-@Table(name = "ingrediente")
-public class Ingrediente implements Serializable {
+@Table(name = "ingredient")
+public class Ingredient implements Serializable {
 
     @Serial
     private static final long serialVersionUID = 4640694005511455111L;
@@ -18,11 +18,11 @@ public class Ingrediente implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column
-    private Long id_ingrediente;
+    private Long id_ingredient;
 
-    @Column(name = "nome_ingrediente", nullable = false)
-    private int nome_ingrediente;
+    @Column(name = "ingredient_name", nullable = false)
+    private int ingredient_name;
 
-    @ManyToMany(mappedBy = "ingredientes")
-    private List<Prato> pratos;
+    @ManyToMany(mappedBy = "ingredients")
+    private List<Dish> dishes;
 }

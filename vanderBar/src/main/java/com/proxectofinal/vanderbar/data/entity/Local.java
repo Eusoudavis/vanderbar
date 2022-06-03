@@ -18,23 +18,23 @@ public class Local implements Serializable {
     @Column(name = "id_local", nullable = false)
     private int id_local;
 
-    @Column(name = "nome_local", nullable = false)
-    private String nomeLocal;
+    @Column(name = "name_local", nullable = false)
+    private String name_local;
 
-    @Column(name = "rango_prezos", nullable = false)
-    private double rangoPrezos;
+    @Column(name = "price_range", nullable = false)
+    private double price_range;
 
 //    @Column(name = "concello", nullable = false)
 //    private Concello concello;
 
-    @Column(name = "rua", nullable = false)
-    private String rua;
+    @Column(name = "street", nullable = false)
+    private String street;
 
-    @Column(name = "numero", nullable = false)
-    private int numero;
+    @Column(name = "num", nullable = false)
+    private int num;
 
-    @Column(name = "telefono", nullable = false)
-    private String telefono;
+    @Column(name = "telph", nullable = false)
+    private String telph;
 
     @Column(name = "email", nullable = false)
     private String email;
@@ -55,22 +55,22 @@ public class Local implements Serializable {
             CascadeType.MERGE
     })
     @JoinTable(
-            name = "local_tipo_local",
+            name = "local_type_local",
             joinColumns = {@JoinColumn(name = "id_local")},
-            inverseJoinColumns = {@JoinColumn(name = "id_tipo_local")}
+            inverseJoinColumns = {@JoinColumn(name = "id_local_type")}
     )
-    private List<TipoLocal> tiposLocais;
+    private List<LocalType> localTypes;
 
     @ManyToMany(cascade = {
             CascadeType.PERSIST,
             CascadeType.MERGE
     })
     @JoinTable(
-            name = "local_propietario",
+            name = "local_owner",
             joinColumns = {@JoinColumn(name = "id_local")},
-            inverseJoinColumns = {@JoinColumn(name = "id_usuario")}
+            inverseJoinColumns = {@JoinColumn(name = "id_user")}
     )
-    private List<Propietario> propietarios;
+    private List<Owner> owners;
 
 //    @ManyToMany(cascade = {
 //            CascadeType.PERSIST,
@@ -88,11 +88,11 @@ public class Local implements Serializable {
             CascadeType.MERGE
     })
     @JoinTable(
-            name = "local_carta",
+            name = "local_menu",
             joinColumns = {@JoinColumn(name = "id_local")},
-            inverseJoinColumns = {@JoinColumn(name = "id_carta")}
+            inverseJoinColumns = {@JoinColumn(name = "id_menu")}
     )
-    private List<Carta> cartas;
+    private List<Menu> menus;
 
    // @Column(name = "estado", nullable = false)
    // private Estado estado;

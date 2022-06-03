@@ -1,5 +1,6 @@
 package com.proxectofinal.vanderbar.data.entity;
 
+import lombok.Data;
 import lombok.Getter;
 
 import javax.persistence.Column;
@@ -8,18 +9,18 @@ import java.io.Serial;
 import java.io.Serializable;
 
 @Embeddable
-@Getter
-public class ProdutoCartaId implements Serializable {
+@Data
+public class ProductDishID implements Serializable {
 
     @Serial
     private static final long serialVersionUID = 6858498166888429923L;
 
-    @Column(name = "id_produto_carta")
-    private Long id_produto_carta;
+    @Column(name = "id_product_dish")
+    private Long id_product_dish;
 
-    @Column(name = "produto")
-    private Long id_produto;
+    @Column(name = "product")
+    private Long id_product;
 
-    @Column(name = "carta")
-    private Long id_carta;
+    @Column(name = "menu")
+    private Long id_menu;
 }

@@ -9,19 +9,19 @@ import java.util.List;
 
 @Data
 @Entity
-@Table(name = "tipo_local")
-public class TipoLocal implements Serializable {
+@Table(name = "local_type")
+public class LocalType implements Serializable {
     @Serial
     private static final long serialVersionUID = -7261179064356206638L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id_tipo_local", nullable = false)
-    private int id_tipo_local;
+    @Column(name = "id_local_type", nullable = false)
+    private int id_local_type;
 
-    @Column(name = "nome_tipo_local", nullable = false)
-    private int nome_tipo_local;
+    @Column(name = "name_local_type", nullable = false)
+    private int name_local_type;
 
-    @ManyToMany(mappedBy = "tiposLocais")
-    private List<Local> locais;
+    @ManyToMany(mappedBy = "localTypes")
+    private List<Local> localList;
 }
